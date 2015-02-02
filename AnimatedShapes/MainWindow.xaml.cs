@@ -24,5 +24,21 @@ namespace AnimatedShapes
         {
             InitializeComponent();
         }
+
+        private void FirstMove(object sender, MouseEventArgs e)
+        {
+            double windowHeight = this.ActualHeight;
+            double windowWidth = this.ActualWidth;
+            Random random = new Random();
+            int xMovement = random.Next(200) - 1;
+            int yMovement = random.Next(300) - 1;
+
+            Canvas.SetTop(RectangleOne, xMovement);
+            Canvas.SetLeft(RectangleOne, yMovement);
+
+            //RectangleOne.HorizontalAlignment = xMovement;
+            //RectangleOne.VerticalAlignment = yMovement;
+            RectangleOne.Fill = Brushes.DarkOliveGreen;
+        }
     }
 }
